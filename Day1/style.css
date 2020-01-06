@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+.checkerboard-holder{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.box{
+    border: 2px solid black;
+}
+
+
+.main-dividers{
+    display: grid;
+    grid-template-columns: 70vw 30vw;
+    grid-template-rows: 50vw;
+}
+
