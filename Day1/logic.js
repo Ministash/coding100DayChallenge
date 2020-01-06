@@ -1,5 +1,8 @@
 // Variables Defined
 const isClicked = false;
+let whosTurnIsItCurrently = false;
+let colorArr = ["blue", "red"];
+let currentColor = '';
 const boxObj = [
     {
         id: "0",
@@ -92,11 +95,27 @@ let colorChanger = () =>{
 
         }else{
             console.log(boxObj);
-            $('#' + boxObj[i].id).css('background-color', 'red');
+
+            $('#' + boxObj[i].id).css('background-color', currentColor);
             
         }
     }
 }
 
 
+let whosTurnIsIt= () =>{
+   let randomDecider = Math.floor(Math.random() * 2);
+   
+   if(randomDecider === 0){
+       whosTurnIsItCurrently = false;
+        currentColor = colorArr[0]
+
+   }else{
+    whosTurnIsItCurrently = true;
+    currentColor = colorArr[1]
+   }
+}
+
+
 startGame();
+whosTurnIsIt();
