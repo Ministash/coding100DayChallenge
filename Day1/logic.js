@@ -1,3 +1,4 @@
+let currentPlayer = 0;
 const boxObj = [
     {
         id: "0",
@@ -54,7 +55,7 @@ const boxObj = [
 let startGame = (turn) =>{
 
     // console.log("startGame is working");
-    whosTurnIsItGameStart();
+    updateCurrentTurn();
     buildDivFunc();
     clickFunction(turn);
 
@@ -72,13 +73,14 @@ let buildDivFunc = () =>{
 }
 
 
-let clickFunction = (currentTurn) =>{
-    console.log(currentTurn);
+let clickFunction = () =>{
+    
     $(".box").on("click", function(e){
         e.preventDefault();
+        let newTurn = currentPlayer;
         // console.log("click is working");
          let newId = event.target.id;
-         gameFunction(newId, currentTurn);
+         gameFunction(newId, newTurn);
     }); 
 }
 
@@ -87,7 +89,7 @@ let gameFunction = (id, currentPlayer) =>{
         // console.log("update is happening");
         updateClickedDivs(id);
         updatePlayerChoice(id, currentPlayer);
-        // updateCurrentTurn(currentPlayer);
+        updateCurrentTurn();
     
 }
 
@@ -106,12 +108,11 @@ let updateClickedDivs = (id) =>{
 
 
 let updatePlayerChoice = (id, currentPlayerChoice) =>{
-    console.log(currentPlayerChoice);
+    console.log(currentPlayerChoice + "<---- current player choice");
     if(currentPlayerChoice === 0){
         currentPlayerChoice = "red";
     }else{
         currentPlayerChoice = "blue";
-        console.log("blue");
     }
 
     for (let index = 0; index < boxObj.length; index++) {
@@ -121,21 +122,19 @@ let updatePlayerChoice = (id, currentPlayerChoice) =>{
     }
 } 
 
-// let updateCurrentTurn = (currentPlayer) =>{
-//     if(currentPlayer === currentPlayer){
+let updateCurrentTurn = () =>{
+    console.log('fired!');
+        if (currentPlayer === 0){
+            currentPlayer = 1;
+            console.log("new player is red");
 
-//     }else{
-//         if (currentPlayer === 0){
-//             return currentPlayer = 1;
+        }else{
+             currentPlayer = 0;
+             console.log("new player is blue");
 
-//         }else{
-//             return currentPlayer = 0;
+        }
 
-//         }
-
-//     }
-// }
-
+    }
 
 
 
@@ -146,9 +145,10 @@ let updatePlayerChoice = (id, currentPlayerChoice) =>{
 
 
 
-let whosTurnIsItGameStart = () => {
-    return  Math.floor(Math.random() * 2);
-};
+
+// let whosTurnIsItGameStart = () => {
+//     return  Math.floor(Math.random() * 2);
+// };
 
 
-startGame(whosTurnIsItGameStart());
+startGame();
