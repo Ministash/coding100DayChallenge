@@ -52,24 +52,23 @@ const boxObj = [
 
 
 
-let startGame = (turn) =>{
-
-    // console.log("startGame is working");
-    updateCurrentTurn();
+let startGame = () =>{
     buildDivFunc();
-    clickFunction(turn);
-
 }
 
 let buildDivFunc = () =>{
-    
+
     boxObj.forEach(function(item) {
         $('.checkerboard-holder').append(
             $("<div/>")
             .addClass('box')
             .attr('id', item.id)
+            .css('background-color', item.playerChoice)
         );
     }); 
+
+    clickFunction();
+
 }
 
 
@@ -78,18 +77,22 @@ let clickFunction = () =>{
     $(".box").on("click", function(e){
         e.preventDefault();
         let newTurn = currentPlayer;
-        // console.log("click is working");
          let newId = event.target.id;
          gameFunction(newId, newTurn);
     }); 
 }
 
 let gameFunction = (id, currentPlayer) =>{
-
-        // console.log("update is happening");
+    if(boxObj[id].hasClicked === true){
+        console.log('nothing will be done my child');
+    }else{
+        $('.checkerboard-holder').html("");
         updateClickedDivs(id);
         updatePlayerChoice(id, currentPlayer);
-        updateCurrentTurn();
+        updateCurrentTurn(id);
+        buildDivFunc();
+
+    }
     
 }
 
@@ -98,17 +101,16 @@ let updateClickedDivs = (id) =>{
     for (let index = 0; index < boxObj.length; index++) {
         if(boxObj[index].id === id && boxObj[index].hasClicked === false){
             boxObj[index].hasClicked = true;
-            console.log(boxObj);
-            // console.log("we found the corret object!");
+
         }else{
-            // console.log('this is the wrong item in your objects');
+
         }
     }  
 }
 
 
 let updatePlayerChoice = (id, currentPlayerChoice) =>{
-    console.log(currentPlayerChoice + "<---- current player choice");
+
     if(currentPlayerChoice === 0){
         currentPlayerChoice = "red";
     }else{
@@ -122,17 +124,19 @@ let updatePlayerChoice = (id, currentPlayerChoice) =>{
     }
 } 
 
-let updateCurrentTurn = () =>{
-    console.log('fired!');
-        if (currentPlayer === 0){
-            currentPlayer = 1;
-            console.log("new player is red");
+let updateCurrentTurn = (id) =>{
 
-        }else{
-             currentPlayer = 0;
-             console.log("new player is blue");
-
-        }
+            if (currentPlayer === 0){
+                currentPlayer = 1;
+                // console.log("new player is red");
+                console.log(boxObj);
+    
+            }else{
+                 currentPlayer = 0;
+                //  console.log("new player is blue");
+                 console.log(boxObj);
+    
+            }
 
     }
 
