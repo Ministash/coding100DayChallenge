@@ -148,9 +148,13 @@ let hasSomeoneWon = () =>{
     // let blueWinnings = [];
     
 
-    let blueWinnings = boxObj.filter(choice => {
-        return choice.playerChoice === "blue";
+    let blueWinnings = boxObj.filter(boxes => {
+        return boxes.playerChoice === 'blue';
     });
+
+    if(blueWinnings[i].id === '1' && blueWinnings[i].id === '2' && blueWinnings[i].id === '3'){
+        console.log('player blue wins!');
+    }
 
 
 
