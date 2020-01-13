@@ -1,18 +1,48 @@
-var animals = [
-    {name: 'fluff', species: 'rabbit'},
-    {name: 'hunter', species: 'dog'},
-    {name: 'rebecca', species: 'cat'},
-    {name: 'robert', species: 'rabbit'},
-    {name: 'brian', species: 'dog'},
-    {name: 'helen', species: 'cat'},
-]
+let arr1 = ["bob", "jim", "michael", "susan"];
+let arr2 = ["bob",'rodger', "jim"];
+
+
+let isItInArr1 = [];
+
+
+// let arrFinder = () =>{
+//     for (let i = 0; i < arr1.length; i++) {
+//         let currentIndex = arr1[i];
+
+//         for (let a = 0; a < arr2.length; a++) {
+//             if(currentIndex === arr2[a]){
+//                 isItInArr1.push(arr2[a]);
+//                 console.log("something is equalling");
+//             }else{
+//                 console.log("doesnt eqaul");
+//             }
+            
+//         }
+
+//     }
+// }
+
+// arrFinder();
 
 
 
+arr1.forEach((item1) => {
 
-var dogs = animals.filter(function(animal){
-    return animal.species === 'dog';
+    arr2.forEach((item2) => {
+        if(item1 === item2){
+            isItInArr1.push(item2);
+            console.log("something is equalling");
+        }else{
+            console.log("doesnt eqaul");
+        }
+    });
+    
 });
 
 
-console.log(dogs[0].species);
+
+
+
+console.log(isItInArr1);
+
+

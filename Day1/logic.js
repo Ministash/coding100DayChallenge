@@ -1,16 +1,4 @@
 let currentPlayer = 0;
-const winningCombos = [
-    ["0", "1", "2",],
-    ["3", "4", "5",],
-    ["6", "7", "8",],
-
-    ["0", "3", "6",],
-    ["1", "4", "7",],
-    ["2", "5", "8",],
-
-    ["0", "4", "8",],
-    ["2", "4", "6",],
-]
 const boxObj = [
     {
         id: "0",
@@ -152,7 +140,20 @@ let updateCurrentTurn = () => {
 
 
 let hasSomeoneWon = () => {
-    // let redWinnings = [];
+    const winningCombos = [
+        ["0", "1", "2",],
+        ["3", "4", "5",],
+        ["6", "7", "8",],
+    
+        ["0", "3", "6",],
+        ["1", "4", "7",],
+        ["2", "5", "8",],
+    
+        ["0", "4", "8",],
+        ["2", "4", "6",],
+    ]
+
+    let redWinnings = [];
     let blueWinnings = [];
 
 
@@ -160,11 +161,41 @@ let hasSomeoneWon = () => {
         if(boxes.playerChoice === "blue"){
             blueWinnings.push(boxes.id);
         }else{
-            console.log('nothing here');
+            redWinnings.push(boxes.id);
         }
-    })
+    });
 
-    console.log(blueWinnings);
+    arrChecker(winningCombos, blueWinnings);
+
+}
+
+
+
+
+let arrChecker = (arr1, arr2) => {
+    let isItInArr1 = [];
+
+
+    arr1.forEach((item1) => {
+
+        arr2.forEach((item2) => {
+            if(item1 === item2){
+                isItInArr1.push(item2);
+                console.log("something is equalling");
+            }else{
+                console.log("doesnt eqaul");
+            }
+        });
+        
+    });
+}
+
+
+
+
+
+
+    
 
 
 
@@ -198,7 +229,7 @@ let hasSomeoneWon = () => {
     //         console.log("nothing is being pushed");
     //     }
     // }
-}
+
 
 // let scoreChecker = (scoreArr) =>{
 //     console.log(scoreArr);
