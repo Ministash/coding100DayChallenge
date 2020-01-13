@@ -174,20 +174,30 @@ let hasSomeoneWon = () => {
 
 let arrChecker = (arr1, arr2) => {
     let isItInArr1 = [];
+    // console.log(arr1);
+    // console.log(arr2);
 
 
     arr1.forEach((item1) => {
-
+        console.log(item1);
         arr2.forEach((item2) => {
             if(item1 === item2){
                 isItInArr1.push(item2);
-                console.log("something is equalling");
+                // console.log("something is equalling");
             }else{
-                console.log("doesnt eqaul");
+                // console.log("doesnt eqaul");
             }
         });
         
     });
+
+
+    if(3 <= isItInArr1.length){
+        // console.log('somonewon');
+    }else{
+        // console.log('still havent won');
+        console.log(isItInArr1);
+    }
 }
 
 

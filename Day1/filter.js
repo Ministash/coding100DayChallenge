@@ -1,5 +1,6 @@
-let arr1 = ["bob", "jim", "michael", "susan"];
+let arr1 = ["bob", "jim", "rodger", "susan"];
 let arr2 = ["bob",'rodger', "jim"];
+let arr2 = ["bob","jim", "rodger"];
 
 
 let isItInArr1 = [];
