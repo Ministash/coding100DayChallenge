@@ -192,6 +192,9 @@ let arrChecker = (arr1, arr2) => {
     });
 
 
+    //you need to go a level deeper, because the winningCombos arr is not just one array, but an array of arrays
+
+
     if(3 <= isItInArr1.length){
         // console.log('somonewon');
     }else{
