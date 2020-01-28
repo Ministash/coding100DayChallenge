@@ -1,49 +1,57 @@
-let arr1 = ["bob", "jim", "rodger", "susan"];
-let arr2 = ["bob",'rodger', "jim"];
-let arr2 = ["bob","jim", "rodger"];
+const winningCombos = [
+    ["0", "1", "2",],
+    ["3", "4", "5",],
+    ["6", "7", "8",],
+
+    ["0", "3", "6",],
+    ["1", "4", "7",],
+    ["2", "5", "8",],
+
+    ["0", "4", "8",],
+    ["2", "4", "6",],
+];
 
 
-let isItInArr1 = [];
+let testingArr = ["0", "6", "3"];
+let haveYouFoundAMatch = false;
+let currentIndex = 0;
+let winningArr = [];
 
+let seperatorFunc = () =>{
+    let compareArr = winningCombos[currentIndex];
 
-// let arrFinder = () =>{
-//     for (let i = 0; i < arr1.length; i++) {
-//         let currentIndex = arr1[i];
-
-//         for (let a = 0; a < arr2.length; a++) {
-//             if(currentIndex === arr2[a]){
-//                 isItInArr1.push(arr2[a]);
-//                 console.log("something is equalling");
-//             }else{
-//                 console.log("doesnt eqaul");
-//             }
-            
-//         }
-
-//     }
-// }
-
-// arrFinder();
-
-
-
-arr1.forEach((item1) => {
-
-    arr2.forEach((item2) => {
-        if(item1 === item2){
-            isItInArr1.push(item2);
-            console.log("something is equalling");
-        }else{
-            console.log("doesnt eqaul");
-        }
+    compareArr.forEach(currentArrItems =>{
+        testingArr.forEach(bluewinnings =>{
+            if(bluewinnings === currentArrItems){
+                winningArr.push(currentArrItems);
+            }else{
+                
+            }
+        });
     });
+
+    if(winningArr.length === 3){
+        console.log("someone won!");
+    }else{
+        console.log("still not winning");
+        currentIndex++;
+        seperatorFunc();
+    }
+
     
-});
+}
+
+
+
+seperatorFunc();
 
 
 
 
 
-console.log(isItInArr1);
+
+
+
+
 
 
