@@ -12,16 +12,16 @@ const winningCombos = [
 ];
 
 
-let testingArr = ["0", "6", "3"];
-let haveYouFoundAMatch = false;
+let winningsArr = ["4", "6", "2"];
 let currentIndex = 0;
 let winningArr = [];
 
 let seperatorFunc = () =>{
+    winningArr = [];
     let compareArr = winningCombos[currentIndex];
 
     compareArr.forEach(currentArrItems =>{
-        testingArr.forEach(bluewinnings =>{
+        winningsArr.forEach(bluewinnings =>{
             if(bluewinnings === currentArrItems){
                 winningArr.push(currentArrItems);
             }else{
@@ -32,16 +32,19 @@ let seperatorFunc = () =>{
 
     if(winningArr.length === 3){
         console.log("someone won!");
+        console.log(winningArr);
     }else{
         console.log("still not winning");
         currentIndex++;
-        seperatorFunc();
+        if(currentIndex < 8){
+            seperatorFunc();
+        }else{
+            console.log("there are no matches");
+        }
     }
 
     
 }
-
-
 
 seperatorFunc();
 
