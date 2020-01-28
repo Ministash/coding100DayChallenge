@@ -85,7 +85,7 @@ let clickFunction = () => {
 
 let gameFunction = (id, currentPlayer) => {
     if (boxObj[id].hasClicked === true) {
-        // console.log('nothing will be done my child');
+
     } else {
         $('.checkerboard-holder').html("");
         updateClickedDivs(id);
@@ -166,7 +166,6 @@ let hasSomeoneWon = () => {
 
 
 let arrChecker = (testingArr) => {
-    console.log(testingArr);
     const winningCombos = [
         ["0", "1", "2",],
         ["3", "4", "5",],
@@ -198,15 +197,12 @@ let seperatorFunc = () =>{
     });
 
     if(winningArr.length === 3){
-        console.log("someone won!");
-        console.log(winningArr);
+        printWinningPLayer();
     }else{
-        console.log("still not winning");
         currentIndex++;
         if(currentIndex < 8){
             seperatorFunc();
         }else{
-            console.log("there are no matches");
         }
     }
 
@@ -214,13 +210,17 @@ let seperatorFunc = () =>{
 }
 
 seperatorFunc();
-    
-    
+      
 }
 
 
-
-
+let printWinningPLayer = () =>{
+    if(currentPlayer === 0){
+        console.log("blue wins!");
+    }else{
+        console.log("red wins!");
+    }
+};
 
 
 startGame();
