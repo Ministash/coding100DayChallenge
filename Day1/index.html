@@ -5,29 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
 <body>
 
     <div class="main-dividers">
-        <div class="checkerboard-holder">
-
-        </div>
 
         <div class="score-board-wrapper">
+
             <div class="score-card">
-                <div>Tick-Tack-Toe</div>
-                <div>It Is Currently Player: <div class="turn"> Blue<div>'s Turn</div>
+                <div class="big-font">Tick-Tack-Toe</div>
+
+                <div class="almost-as-big-font center">It Is Currently Player:
+                    <div class="center turn almost-as-big-font-bolder">
+
                     </div>
+
+                    <div class="almost-as-big-font">Turn</div>
                 </div>
-
-
             </div>
 
 
-            <script type="text/javascript" src="logic.js"></script>
+        </div>
+
+        <div class="checkerboard-wrapper">
+            <div></div>
+            <div id="checkerboard-holder"></div>
+            <div></div>
+        </div>
+
+
+
+
+
+
+
+
+        <script type="text/javascript" src="logic.js"></script>
 </body>
 
 </html>

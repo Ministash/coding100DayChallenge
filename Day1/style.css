@@ -3,9 +3,22 @@
     margin: 0;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
 
-.checkerboard-holder{
+
+.checkerboard-wrapper{
     display: grid;
+    grid-template-columns: 1.5fr 3fr 1.5fr;
+    grid-template-rows: 40vw;
+}
+
+
+
+#checkerboard-holder{
+    display: grid;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
 }
@@ -17,7 +30,59 @@
 
 .main-dividers{
     display: grid;
-    grid-template-columns: 70vw 30vw;
-    grid-template-rows: 50vw;
+    grid-template-columns: 100vw;
+    grid-template-rows: 120px 70vh;
 }
 
+.score-board-wrapper{
+    margin: 0 auto;
+}
+
+.big-font{
+    font-weight: bold;
+    font-size: 35px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.almost-as-big-font{
+    font-weight: 300;
+    font-size: 15px;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+}
+
+
+.almost-as-big-font-bolder{
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+}
+
+.score-card{
+    position: relative;
+}
+
+.splash-message{
+    background-color: rgb(0, 0, 0);
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+.winning-text-wrapper{
+    position: absolute;
+    width: 50%;
+    height: 20%;
+    top: 220px;
+    opacity: 1 !important;
+}
+
+#winning-text{
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    color: white; 
+    opacity: 1 !important;
+}

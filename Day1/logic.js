@@ -3,47 +3,47 @@ const boxObj = [
     {
         id: "0",
         hasClicked: false,
-        playerChoice: ""
+        playerChoice: "white"
     },
     {
         id: "1",
         hasClicked: false,
-        playerChoice: ""
+        playerChoice: "white"
     },
     {
         id: "2",
         hasClicked: false,
-        playerChoice: ""
+        playerChoice: "white"
     },
     {
         id: "3",
         hasClicked: false,
-        playerChoice: ""
+        playerChoice: "white"
     },
     {
         id: "4",
         hasClicked: false,
-        playerChoice: ""
+        playerChoice: "white"
     },
     {
         id: "5",
         hasClicked: false,
-        playerChoice: ""
+        playerChoice: "white"
     },
     {
         id: "6",
         hasClicked: false,
-        playerChoice: ""
+        playerChoice: "white"
     },
     {
         id: "7",
         hasClicked: false,
-        playerChoice: ""
+        playerChoice: "white"
     },
     {
         id: "8",
         hasClicked: false,
-        playerChoice: ""
+        playerChoice: "white"
     },
 
 ];
@@ -53,13 +53,14 @@ const boxObj = [
 
 
 let startGame = () => {
+    $(".turn").html("Red's").css('color', 'red');
     buildDivFunc();
 }
 
 let buildDivFunc = () => {
 
     boxObj.forEach(function (item) {
-        $('.checkerboard-holder').append(
+        $('#checkerboard-holder').append(
             $("<div/>")
                 .addClass('box')
                 .attr('id', item.id)
@@ -95,7 +96,7 @@ let gameFunction = (id, currentPlayer) => {
         //checking to see if that box that we just clicked on has already been clicked
     } else {
         //need to reset the entire board, making sure that each box is updated with the most current info from our global boxObj
-        $('.checkerboard-holder').html("");
+        $('#checkerboard-holder').html("");
 
         //where I update the state of a box being "clicked"
         updateClickedDivs(id);
@@ -136,8 +137,10 @@ let updatePlayerChoice = (id, currentPlayerChoice) => {
     //Need to translate our current user from a 1 or a 0 to "red" or "blue"
     if (currentPlayerChoice === 0) {
         currentPlayerChoice = "red";
+        $(".turn").html("Blue's").css('color', 'blue');;
     } else {
         currentPlayerChoice = "blue";
+        $(".turn").html("Red's").css('color', 'red');;
     }
 
     //check the id of the current clicked box, then update it
@@ -256,10 +259,21 @@ seperatorFunc();
 
 let printWinningPLayer = () =>{
     if(currentPlayer === 0){
-        console.log("blue wins!");
+        let winningPLayer = "Blue";
+        appendADiv(winningPLayer);
     }else{
-        console.log("red wins!");
+        let winningPLayer = "Red";
+        appendADiv(winningPLayer);
     }
+};
+
+
+
+let appendADiv = (wPlayer) =>{
+    $(".checkerboard-wrapper").html('<div></div><div class="splash-message"><div class="winning-text-wrapper"><div id="winning-text">Player<div class="winning-text">' + wPlayer + '</div><div class="winning-text">Wins!</div></div></div><div id="checkerboard-holder"></div></div><div></div>');
+    buildDivFunc();
+    $('#checkerboard-holder').css('opacity', 0.1);
+    
 };
 
 //Initialize game
