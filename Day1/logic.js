@@ -58,7 +58,10 @@ let startGame = () => {
 }
 
 let buildDivFunc = () => {
+    //need to reset the entire board, making sure that each box is updated with the most current info from our global boxObj
+    $('#checkerboard-holder').html("");
 
+    //need to build the board using updated information from the boxObj
     boxObj.forEach(function (item) {
         $('#checkerboard-holder').append(
             $("<div/>")
@@ -68,8 +71,8 @@ let buildDivFunc = () => {
         );
     });
 
+    //Need to re-activate the click function for my rebuilt functions
     clickFunction();
-
 
 }
 
@@ -95,9 +98,6 @@ let gameFunction = (id, currentPlayer) => {
     if (boxObj[id].hasClicked === true) {
         //checking to see if that box that we just clicked on has already been clicked
     } else {
-        //need to reset the entire board, making sure that each box is updated with the most current info from our global boxObj
-        $('#checkerboard-holder').html("");
-
         //where I update the state of a box being "clicked"
         updateClickedDivs(id);
         
@@ -270,11 +270,25 @@ let printWinningPLayer = () =>{
 
 
 let appendADiv = (wPlayer) =>{
-    $(".checkerboard-wrapper").html('<div></div><div class="splash-message"><div class="winning-text-wrapper"><div id="winning-text">Player<div class="winning-text">' + wPlayer + '</div><div class="winning-text">Wins!</div></div></div><div id="checkerboard-holder"></div></div><div></div>');
+    $(".checkerboard-wrapper").html('<div></div><div class="splash-message"><div class="winning-text-wrapper"><div id="winning-text">Player<div class="winning-text">' + wPlayer + '</div><div class="winning-text">Wins!</div></div><button onclick="resetGame()" class="reset-button">Play Again!</button></div><div id="checkerboard-holder"></div></div><div></div>');
     buildDivFunc();
     $('#checkerboard-holder').css('opacity', 0.1);
     
 };
+
+
+
+let resetGame = () =>{
+    console.log("hello");
+    for (let index = 0; index < boxObj.length; index++) {
+        boxObj[index].playerChoice = "white";
+        boxObj[index].hasClicked = false;
+
+        
+    }
+
+    buildDivFunc();
+}
 
 //Initialize game
 startGame();
