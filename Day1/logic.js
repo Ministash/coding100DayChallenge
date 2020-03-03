@@ -113,6 +113,9 @@ let gameFunction = (id, currentPlayer) => {
         //need to check if someone has won the game!
         hasSomeoneWon();
 
+        //check to see if all the tiles have been played but nobody won :(
+        allTilesPlayedReset();
+
     }
 
 }
@@ -268,12 +271,35 @@ let printWinningPLayer = () =>{
 };
 
 
+let allTilesPlayedReset = () =>{
+    let numberOfTilesChecked = 0;
+
+    for (let index = 0; index < boxObj.length; index++) {
+        if(boxObj[index].hasClicked === true){
+            numberOfTilesChecked++
+            console.log('going up!');
+            
+        }else{
+            //do nothing
+            console.log('nothing is going on :(');
+            
+        }
+        
+    }
+
+    if(numberOfTilesChecked === 9){
+        $('.main-dividers').append('<button onclick="resetGame()" class="reset-button">Play Again!</button>');
+    }
+}
+
+
 
 let appendADiv = (wPlayer) =>{
     $(".checkerboard-wrapper").html('<div></div><div class="splash-message"><div class="winning-text-wrapper"><div id="winning-text">Player<div class="winning-text">' + wPlayer + '</div><div class="winning-text">Wins!</div></div></div><div id="checkerboard-holder"></div></div><div></div>');
     $('.main-dividers').append('<button onclick="resetGame()" class="reset-button">Play Again!</button>');
     buildDivFunc();
     $('#checkerboard-holder').css('opacity', 0.1);
+    $('.box').off('click');
     
 };
 
