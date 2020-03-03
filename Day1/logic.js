@@ -270,7 +270,8 @@ let printWinningPLayer = () =>{
 
 
 let appendADiv = (wPlayer) =>{
-    $(".checkerboard-wrapper").html('<div></div><div class="splash-message"><div class="winning-text-wrapper"><div id="winning-text">Player<div class="winning-text">' + wPlayer + '</div><div class="winning-text">Wins!</div></div><button onclick="resetGame()" class="reset-button">Play Again!</button></div><div id="checkerboard-holder"></div></div><div></div>');
+    $(".checkerboard-wrapper").html('<div></div><div class="splash-message"><div class="winning-text-wrapper"><div id="winning-text">Player<div class="winning-text">' + wPlayer + '</div><div class="winning-text">Wins!</div></div></div><div id="checkerboard-holder"></div></div><div></div>');
+    $('.main-dividers').append('<button onclick="resetGame()" class="reset-button">Play Again!</button>');
     buildDivFunc();
     $('#checkerboard-holder').css('opacity', 0.1);
     
@@ -283,9 +284,11 @@ let resetGame = () =>{
     for (let index = 0; index < boxObj.length; index++) {
         boxObj[index].playerChoice = "white";
         boxObj[index].hasClicked = false;
-
-        
     }
+
+    $(".checkerboard-wrapper").html('<div></div><div id="checkerboard-holder"></div><div></div>');
+    $('.reset-button').remove();
+
 
     buildDivFunc();
 }

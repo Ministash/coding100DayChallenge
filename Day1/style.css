@@ -9,7 +9,7 @@
 .checkerboard-wrapper{
     display: grid;
     grid-template-columns: 1.5fr 3fr 1.5fr;
-    grid-template-rows: 40vw;
+    grid-template-rows: minmax(20vw, 35vw);
 }
 
 
