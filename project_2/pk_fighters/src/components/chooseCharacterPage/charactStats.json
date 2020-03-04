@@ -1,0 +1,34 @@
+{
+    "character_1" : {
+        "name" : "character_1",
+        "health" : 100,
+        "armor" : 30,
+        "attack" : 5,
+        "ability_1" : "",
+        "ability_2" : "",
+        "ability_3" : "",
+        "ability_4" : ""
+    },
+
+    "character_2" : {
+        "name" : "character_2",
+        "health" : 50,
+        "armor" : 50,
+        "attack" : 6,
+        "ability_1" : "",
+        "ability_2" : "",
+        "ability_3" : "",
+        "ability_4" : ""
+    },
+
+    "character_3" : {
+        "name" : "character_3",
+        "health" : 30,
+        "armor" : 100,
+        "attack" : 7,
+        "ability_1" : "",
+        "ability_2" : "",
+        "ability_3" : "",
+        "ability_4" : ""
+    }
+}

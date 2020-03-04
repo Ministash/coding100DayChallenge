@@ -1,0 +1,94 @@
+{
+    "earth" : {
+        "sand_toss" : {
+            "damage" : 5,
+            "hasChoosen" : false,
+            "level" : 1
+        },
+        "rock_throw" : {
+            "damage" : 10,
+            "hasChoosen" : false,
+            "level" : 2
+        },
+        "sand_whip" : {
+            "damage" : 15,
+            "hasChoosen" : false,
+            "level" : 3
+        },
+        "earth_quake" : {
+            "damage" : 20,
+            "hasChoosen" : false,
+            "level" : 4
+        }
+    },
+
+    "fire" : {
+        "burn" : {
+            "damage" : 5,
+            "hasChoosen" : false,
+            "level" : 1
+        },
+        "flame_spit" : {
+            "damage" : 10,
+            "hasChoosen" : false,
+            "level" : 2
+        },
+        "flame_wave" : {
+            "damage" : 15,
+            "hasChoosen" : false,
+            "level" : 3
+        },
+        "fire_storm" : {
+            "damage" : 20,
+            "hasChoosen" : false,
+            "level" : 4
+        }
+    },
+
+    "water" : {
+        "splash" : {
+            "damage" : 5,
+            "hasChoosen" : false,
+            "level" : 1
+        },
+        "wave_spin" : {
+            "damage" : 10,
+            "hasChoosen" : false,
+            "level" : 2
+        },
+        "flash_freeze" : {
+            "damage" : 15,
+            "hasChoosen" : false,
+            "level" : 3
+        },
+        "tsunami" : {
+            "damage" : 20,
+            "hasChoosen" : false,
+            "level" : 4
+        }
+    },
+
+    "air" : {
+        "blow" : {
+            "damage" : 5,
+            "hasChoosen" : false,
+            "level" : 1
+        },
+        "air_punch" : {
+            "damage" : 10,
+            "hasChoosen" : false,
+            "level" : 2
+        },
+        "wind_kick" : {
+            "damage" : 15,
+            "hasChoosen" : false,
+            "level" : 3
+        },
+        "tornado" : {
+            "damage" : 20,
+            "hasChoosen" : false,
+            "level" : 4
+        }
+    },
+
+}
