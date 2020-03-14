@@ -1,1 +1,1 @@
-import {default} from "./characterCards.js";
+export {default} from "./characterCards";

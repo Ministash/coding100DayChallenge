@@ -214,7 +214,7 @@ let arrChecker = (testingArr) => {
 /* using recursion to evaluate each "winningCombos" vs the passed "testingArr" array. currentIndex is is my
 starting place, meaning that it represents index "0" on my array list winningCombos. If the current index does not equal the testingArr, then
 it moves up an index and evaluates the next array. For loops and functions like forEach blended all the arrays together, and 
-I needed to find a way to look at each array index from winningCombos individually */
+I needed to find a way to look at each array index from winningCombos individually. This is a great example of closers and recursion in javascript */
 
 let currentIndex = 0;
 let winningArr = [];
